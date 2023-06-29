@@ -2,7 +2,7 @@ package HW;
 
 import java.util.Scanner;
 
-public class Lesson1 {
+public class HW1 {
     public static void main(String[] args) {
         // triangularAndFactorialNumber();
         // simpleNums();
