@@ -74,14 +74,14 @@ public class HW3 {
         System.out.println();
 
         // for (int i = 0; i < counts.length; i++) {
-        //     System.out.printf("%s - %s\n", listPlanets.get(i), counts[i]);
+        // System.out.printf("%s - %s\n", listPlanets.get(i), counts[i]);
         // }
-        
+
         Set<String> uniquePlanets = new HashSet<>(randPlanets);
         randPlanets.clear();
         randPlanets.addAll(uniquePlanets);
 
-        for(String planet: randPlanets)
+        for (String planet : randPlanets)
             System.out.print(planet + " ");
     }
 }
