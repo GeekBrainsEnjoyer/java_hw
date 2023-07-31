@@ -1,7 +1,7 @@
 package seminar7;
 
 public class HotBeverage extends Beverage{
-    int temperature;
+    private int temperature;
 
     public HotBeverage(String name, int price, double volume, int quantity, int temperature){
         super(name, price, volume, quantity);

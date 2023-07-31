@@ -1,4 +1,4 @@
-package HW.HW6;
+package HW6;
 
 public class Cat {
 

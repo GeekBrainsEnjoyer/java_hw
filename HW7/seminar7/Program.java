@@ -13,10 +13,10 @@ public class Program {
         HotBeverage hb1 = new HotBeverage("cofe", 2, 0.3, 100, 45);
         HotBeverage hb2 = new HotBeverage("tea", 1, 0.3, 100, 45);
 
-        VendingMachine machineList = new VendingMachine();
         List<Product> listOfProducts = new ArrayList<>();
-        HotBeverageVendingMachine hotMachineList = new HotBeverageVendingMachine();
         List<Product> listOfHotBeverage = new ArrayList<>();
+        VendingMachine machineList = new VendingMachine(listOfProducts);
+        HotBeverageVendingMachine hotMachineList = new HotBeverageVendingMachine(listOfHotBeverage);
 
         listOfProducts.add(b1);
         listOfProducts.add(b2);
@@ -30,8 +30,13 @@ public class Program {
 
         machineList.getInfo();
         machineList.getProduct("cola");
+
+        machineList.getInfo();
+        machineList.getProduct("sfsdf");
+
         hotMachineList.getInfo();
         hotMachineList.getProduct("cofe");
+        
 
     }
 

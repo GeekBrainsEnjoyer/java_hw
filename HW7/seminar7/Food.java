@@ -1,7 +1,7 @@
 package seminar7;
 
 public class Food extends Product {
-    double weight;
+    private double weight;
 
     public Food(String name, int price, double weight, int quantity){
         super(name, price, quantity);
