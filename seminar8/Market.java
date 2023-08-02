@@ -12,23 +12,19 @@ public class Market implements MarketBehavior, QueueBehavoir {
 
     public void productsInfo() {
         for (Product product : listProducts) {
-            System.out.println(product.toString());
+            System.out.println(product);
         }
     }
 
-    /*
-     * Из-за того что заказ клиента это строка, метод createOrder ищет имена
-     * продуктов в строке, а потом, если находит, дабавляет их в заказ.
-     */
     public Order createOrder(Human human) {
         String[] orderNames = human.getHumanOrder().split(" ");
         List<Product> humanProducts = new ArrayList<>();
         int totalCost = 0;
         for (String string : orderNames) {
             for (Product product : listProducts) {
-                if (string.equals(product.getName(product))) {
+                if (string.equals(product.getName())) {
                     humanProducts.add(product);
-                    totalCost += product.getPrice(product);
+                    totalCost += product.getPrice();
                 }
             }
         }

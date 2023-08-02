@@ -2,9 +2,6 @@ package seminar8;
 
 import java.util.List;
 
-/*
- * как создать метод toString, чтобы он возвращал имя клиета, при этом не создавая поле client, я не понял.
- */
 public class Order {
 
     private Human client;
@@ -25,10 +22,9 @@ public class Order {
     public String toString() {
         String res = "";
         for (Product product : orderList) {
-            res += product.getName(product) + " ";
+            res += product.getName() + " ";
         }
 
         return String.format("Client: %s\nOrder: %s\nPrice: %d", client.name, res, totalCost);
-
     }
 }
