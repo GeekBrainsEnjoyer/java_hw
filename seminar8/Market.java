@@ -1,36 +1,22 @@
 package seminar8;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class Market implements MarketBehavior, QueueBehavoir {
+public class Market implements MarketBehavior, QueueBehavoir, Iterable<Product> {
     private List<Product> listProducts = new ArrayList<>();
+
+    public Market(List<Product> products) {
+        this.listProducts = products;
+    }
+
+    public List<Product> getProducts() {
+        return listProducts;
+    }
 
     public void initProducts(List<Product> products) {
         listProducts = products;
-    }
-
-    public void productsInfo() {
-        for (Product product : listProducts) {
-            System.out.println(product);
-        }
-    }
-
-    public Order createOrder(Human human) {
-        String[] orderNames = human.getHumanOrder().split(" ");
-        List<Product> humanProducts = new ArrayList<>();
-        int totalCost = 0;
-        for (String string : orderNames) {
-            for (Product product : listProducts) {
-                if (string.equals(product.getName())) {
-                    humanProducts.add(product);
-                    totalCost += product.getPrice();
-                }
-            }
-        }
-        Order order = new Order(human, humanProducts, totalCost);
-
-        return order;
     }
 
     @Override
@@ -70,6 +56,25 @@ public class Market implements MarketBehavior, QueueBehavoir {
     public void update() {
         // TODO Auto-generated method stub
 
+    }
+
+    @Override
+    public Iterator<Product> iterator() {
+        return new Iterator<Product>() {
+            private int counter = 0;
+
+            @Override
+            public boolean hasNext() {
+                return counter < listProducts.size();
+            }
+
+            @Override
+            public Product next() {
+                if (!hasNext())
+                    return null;
+                return listProducts.get(counter++);
+            }
+        };
     }
 
 }

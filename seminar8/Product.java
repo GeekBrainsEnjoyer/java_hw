@@ -12,8 +12,26 @@ public class Product implements Comparable<Product> {
 
     }
 
+    public Product(String name) {
+        this.name = name;
+        this.price = 0;
+        this.quantity = 1;
+
+    }
+
+    public Product(String name, int quantity) {
+        this.name = name;
+        this.price = 0;
+        this.quantity = quantity;
+
+    }
+
     public String getName() {
         return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getPrice() {
@@ -37,6 +55,10 @@ public class Product implements Comparable<Product> {
         return String.format("Name: %s, Prise: %d, Quantity: %d", this.name, this.price, this.quantity);
     }
 
+    /*
+     * comperTo нужен чтобы когда метод sort начинал перебирать Prodects знал по
+     * какому критерию их перебирать.
+     */
     @Override
     public int compareTo(Product o) {
         if (this.price == o.getPrice()) {
