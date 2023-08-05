@@ -1,51 +1,46 @@
 package VendingMachine;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class VendingMachine {
-    protected List<Product> productsList = new ArrayList<>();
+public class VendingMachine<T extends Product> implements AddProduct<T>, Iterable<T> {
+    List<T> listProducts = new ArrayList<T>();
 
-    
-    public VendingMachine(List<Product> productsList) {
-        this.productsList = productsList;
-    }
-    
-    public void add(Product product){
-        
-    } 
-
-    public void initProduct(List<Product> list) {
-        productsList = list;
+    public VendingMachine(List<T> listProducts) {
+        this.listProducts = listProducts;
     }
 
-    public void getProduct(String nameProduct) {
-        boolean findProduct = false;
+    public void initProducts(List<T> list) {
+        this.listProducts = list;
+    }
 
-        for (Product product : productsList) {
-            if (product.getName(product).equals(nameProduct) && product.getQuantity(product) > 0) {
-                System.out.println("You get a product!");
-                product.setQuantity(product.getQuantity(product) - 1);
-                findProduct = true;
+    @Override
+    public void addProduct(T item) {
+        this.listProducts.add(item);
+    }
 
-            } else if (product.getName(product).equals(nameProduct) && product.getQuantity(product) <= 0) {
-                System.out.printf("Sorry( Product %d is over.", nameProduct);
-                findProduct = true;
+    @Override
+    public String toString() {
+        return "VendingMachin{" + listProducts + "}";
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new Iterator<T>() {
+            private int counter = 0;
+
+            @Override
+            public boolean hasNext() {
+                return counter < listProducts.size();
             }
-        }
 
-        if (!findProduct)
-            System.out.printf("Product %s is not found.", nameProduct);
-        System.out.println();
-    }
-
-    public List<Product> getProductsList(List<Product> productsList) {
-        return productsList;
-    }
-
-    public void getInfo() {
-        for (Product product : productsList) {
-            System.out.println(product.toString());
-        }
+            @Override
+            public T next() {
+                if (!hasNext())
+                    return null;
+                return listProducts.get(counter++);
+            }
+        };
     }
 }

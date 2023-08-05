@@ -28,11 +28,4 @@ public abstract class Product {
         return String.format("Name: %s, Prise: %d, Quantity: %d", this.name, this.price, this.quantity);
     }
 
-    public Object getVolume(Product product) {
-        return null;
-    }
-
-    public Object getTemperature(Product product) {
-        return null;
-    }
 }

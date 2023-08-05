@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Order implements Iterable<Product> {
+public class Order<T> implements Iterable<Product> {
     private Human client;
     private List<Product> orderList;
     private Integer totalCost;
@@ -55,6 +55,7 @@ public class Order implements Iterable<Product> {
         this.setOrderList(validateOrderList);
 
     }
+
     /*
      * списов оформляется в обьект класса ордер
      */
