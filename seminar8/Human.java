@@ -1,19 +1,31 @@
 package seminar8;
 
+import java.util.List;
+
 /*
  * поле HumanOreder строкового типа, потому что у клиента есть список имен товаров, а имя товара это одно из полей Order, но не сам класс.
  */
 public class Human extends Actor {
-    protected String HumanOrder;
+    private List<Product> HumanOrder;
 
-    public Human(String name, String HumanOrder) {
+    public Human(String name, List<Product> HumanOrder) {
         super(name);
         this.HumanOrder = HumanOrder;
 
     }
 
-    public String getHumanOrder() {
-        return HumanOrder;
+    public Human(String name) {
+        super(name);
+        this.HumanOrder = null;
+
+    }
+
+    public List<Product> getHumanOrder() {
+        return this.HumanOrder;
+    }
+
+    public void setListOrder(List<Product> order) {
+        this.HumanOrder = order;
     }
 
     @Override
