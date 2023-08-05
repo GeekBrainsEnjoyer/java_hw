@@ -1,4 +1,4 @@
-package seminar8;
+package Market;
 
 public class Product implements Comparable<Product> {
     private String name;

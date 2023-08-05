@@ -1,4 +1,4 @@
-package seminar8;
+package Market;
 
 import java.util.ArrayList;
 import java.util.Collections;

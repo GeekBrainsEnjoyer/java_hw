@@ -1,4 +1,4 @@
-package seminar7;
+package VendingMachine;
 
 import java.util.ArrayList;
 import java.util.List;

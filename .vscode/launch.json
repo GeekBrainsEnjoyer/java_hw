@@ -1,0 +1,70 @@
+{
+    // Используйте IntelliSense, чтобы узнать о возможных атрибутах.
+    // Наведите указатель мыши, чтобы просмотреть описания существующих атрибутов.
+    // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "HW1",
+            "request": "launch",
+            "mainClass": "HW1",
+            "projectName": "HW_fe41818d"
+        },
+        {
+            "type": "java",
+            "name": "HW2",
+            "request": "launch",
+            "mainClass": "HW2",
+            "projectName": "HW_fe41818d"
+        },
+        {
+            "type": "java",
+            "name": "HW3",
+            "request": "launch",
+            "mainClass": "HW3",
+            "projectName": "HW_fe41818d"
+        },
+        {
+            "type": "java",
+            "name": "HW4",
+            "request": "launch",
+            "mainClass": "HW4",
+            "projectName": "HW_fe41818d"
+        },
+        {
+            "type": "java",
+            "name": "HW5",
+            "request": "launch",
+            "mainClass": "HW5",
+            "projectName": "HW_fe41818d"
+        },
+        {
+            "type": "java",
+            "name": "Program",
+            "request": "launch",
+            "mainClass": "HW6.Program",
+            "projectName": "HW_fe41818d"
+        },
+        {
+            "type": "java",
+            "name": "Program(1)",
+            "request": "launch",
+            "mainClass": "seminar7.Program",
+            "projectName": "HW_fe41818d"
+        },
+        {
+            "type": "java",
+            "name": "Program(2)",
+            "request": "launch",
+            "mainClass": "seminar8.Program",
+            "projectName": "HW_fe41818d"
+        }
+    ]
+}

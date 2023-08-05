@@ -1,4 +1,4 @@
-package seminar7;
+package VendingMachine;
 
 public abstract class Product {
     private String name;
