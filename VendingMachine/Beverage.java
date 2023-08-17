@@ -16,4 +16,12 @@ public class Beverage extends Product {
     public double getVolume(Beverage product){
         return volume;
     }
+
+    public double getVolume() {
+        return volume;
+    }
+
+    public void setVolume(double volume) {
+        this.volume = volume;
+    }
 }
