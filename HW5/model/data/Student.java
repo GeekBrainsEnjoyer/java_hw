@@ -9,7 +9,7 @@ public class Student extends User {
     public Student(String name, String surname, String birthday, int groupNum, String speciality,
             double avarageMark) {
         super(name, surname, birthday);
-        this.idStudent = idStudent++;
+        Student.idStudent = idStudent++;
         this.groupNum = groupNum;
         this.speciality = speciality;
         this.avarageMark = avarageMark;

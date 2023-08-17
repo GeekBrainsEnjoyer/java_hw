@@ -11,7 +11,7 @@ public class Teacher extends User {
     public Teacher(String name, String surname, String birthday, ArrayList<String> discipline, double reating,
             String departament) {
         super(name, surname, birthday);
-        this.idTeacher = idTeacher++;
+        Teacher.idTeacher = idTeacher++;
         this.disciplines = discipline;
         this.reating = reating;
         this.departament = departament;

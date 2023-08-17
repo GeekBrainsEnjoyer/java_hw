@@ -2,7 +2,9 @@ package HW5.view;
 
 import java.util.Scanner;
 
-public class UI {
+import HW5.model.data.User;
+
+public class UI<T extends User> {
     Scanner sc;
 
     public UI() {
