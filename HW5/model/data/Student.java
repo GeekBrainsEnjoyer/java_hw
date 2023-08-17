@@ -15,7 +15,6 @@ public class Student extends User {
         this.avarageMark = avarageMark;
     }
 
-
     public int getGroupNum() {
         return groupNum;
     }
@@ -40,10 +39,18 @@ public class Student extends User {
         this.avarageMark = avarageMark;
     }
 
+    public static int getIdStudent() {
+        return idStudent;
+    }
+
+    public static void setIdStudent(int idStudent) {
+        Student.idStudent = idStudent;
+    }
+
     @Override
     public String toString() {
-        return String.format("Name: %s\nSurname: %s\nGroup: %d\nAvarage Mark: %d\n", this.getName(), this.getSurname(),
-                this.groupNum, this.avarageMark);
+        return "Student [" + super.toString() + "groupNum=" + groupNum + ", speciality=" + speciality + ", avarageMark="
+                + avarageMark + "]";
     }
 
 }

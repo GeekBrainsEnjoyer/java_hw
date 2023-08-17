@@ -1,7 +1,6 @@
 package HW5.model.service;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import HW5.model.data.DataBase;
 import HW5.model.data.Student;
@@ -10,29 +9,35 @@ import HW5.model.data.User;
 
 public class UserService<T extends User> implements DataService<T> {
 
-    private DataBase base;
-
-    public UserService() {
-        base = new DataBase();
-    }
+    private static final DataBase db = new DataBase();
 
     @Override
-    public List<T> readData() {
-        return null;
-    }
-
-    @Override
-    public Teacher createTeacher(String name, String surname, String birthday, ArrayList<String> discipline,
+    public boolean createTeacher(String name, String surname, String birthday, ArrayList<String> discipline,
             double reating, String departament) {
-        return new Teacher(name, surname, birthday, discipline, reating, departament);
+        boolean flag = db.add(new Teacher(name, surname, birthday, discipline, reating, departament));
+        return flag;
 
     }
 
     @Override
-    public Student createStudent(String name, String surname, String birthday, int groupNum, String speciality,
+    public boolean createStudent(String name, String surname, String birthday, int groupNum, String speciality,
             double avarageMark) {
-        return new Student(name, surname, birthday, groupNum, speciality, avarageMark);
+        boolean flag = db.add(new Student(name, surname, birthday, groupNum, speciality, avarageMark));
+        return flag;
 
+    }
+
+    public boolean add(User user) {
+        boolean flag = db.add(user);
+        return flag;
+
+    }
+
+    public void infoDataBase() {
+        ArrayList<User> users = db.getDb();
+        for (User user : users) {
+            System.out.println(user.toString() + "\n");
+        }
     }
 
 }

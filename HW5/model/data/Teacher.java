@@ -41,11 +41,22 @@ public class Teacher extends User {
         this.departament = departament;
     }
 
+    public static int getIdTeacher() {
+        return idTeacher;
+    }
+
+    public static void setIdTeacher(int idTeacher) {
+        Teacher.idTeacher = idTeacher;
+    }
+
+    public void setDisciplines(ArrayList<String> disciplines) {
+        this.disciplines = disciplines;
+    }
+
     @Override
     public String toString() {
-        return String.format("Name: %s\nSurname: %s\nDepartment: %d\nDesciplins: %s\nReating: %d\n", this.getName(),
-                this.getSurname(),
-                this.departament, this.disciplines, this.reating);
+        return "Teacher [" + super.toString() + "disciplines=" + disciplines + ", reating=" + reating + ", departament="
+                + departament + "]";
     }
 
 }

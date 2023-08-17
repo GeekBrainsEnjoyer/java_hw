@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Program",
             "request": "launch",
+            "mainClass": "HW5.Program.Program",
+            "projectName": "HW_fe41818d"
+        },
+        {
+            "type": "java",
+            "name": "Program",
+            "request": "launch",
             "mainClass": "VendingMachine.Program",
             "projectName": "HW_fe41818d"
         },

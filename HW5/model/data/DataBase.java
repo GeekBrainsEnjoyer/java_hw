@@ -3,24 +3,31 @@ package HW5.model.data;
 import java.util.ArrayList;
 
 public class DataBase {
-    private ArrayList<User> users;
+    private ArrayList<User> db;
+
+    public DataBase(ArrayList<User> users) {
+        this.db = users;
+    }
 
     public DataBase() {
-        this.users = new ArrayList<User>();
+        this.db = new ArrayList<User>();
     }
 
     public boolean add(User user) {
         boolean flag = false;
-        if (!users.contains(user)) {
-            users.add(user);
+        if (!db.contains(user)) {
+            db.add(user);
             flag = true;
         }
         return flag;
     }
 
-    @Override
-    public String toString() {
-        return "DataBase [users=" + users + "]";
+    public ArrayList<User> getDb() {
+        return db;
+    }
+
+    public void setDb(ArrayList<User> users) {
+        this.db = users;
     }
 
 }
