@@ -1,4 +1,4 @@
-package seminar8;
+package Market;
 
 public abstract class Actor implements ActorBehavoir{
     

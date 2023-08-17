@@ -1,4 +1,4 @@
-package seminar7;
+package VendingMachine;
 
 public class Beverage extends Product {
     private double volume;

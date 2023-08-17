@@ -1,4 +1,4 @@
-package seminar8;
+package Market;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -37,7 +37,7 @@ public class Program {
 
         Human h1 = new Human("Ivan");
 
-        Order humanOrder = new Order(h1, humanProductList);
+        Order<Product> humanOrder = new Order<>(h1, humanProductList);
 
         humanOrder.validateOrder(market.getProducts());
         for (Product product : humanOrder) {
