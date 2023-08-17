@@ -1,4 +1,4 @@
-package seminar7;
+package VendingMachine;
 
 public class Food extends Product {
     private double weight;

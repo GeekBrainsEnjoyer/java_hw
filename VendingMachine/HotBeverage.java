@@ -1,4 +1,4 @@
-package seminar7;
+package VendingMachine;
 
 public class HotBeverage extends Beverage{
     private int temperature;

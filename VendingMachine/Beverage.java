@@ -1,4 +1,4 @@
-package seminar7;
+package VendingMachine;
 
 public class Beverage extends Product {
     private double volume;
@@ -15,5 +15,13 @@ public class Beverage extends Product {
 
     public double getVolume(Beverage product){
         return volume;
+    }
+
+    public double getVolume() {
+        return volume;
+    }
+
+    public void setVolume(double volume) {
+        this.volume = volume;
     }
 }

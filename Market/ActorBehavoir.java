@@ -1,4 +1,4 @@
-package seminar8;
+package Market;
 
 public interface ActorBehavoir {
     
