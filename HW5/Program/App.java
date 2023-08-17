@@ -1,10 +1,11 @@
-package HW5.view;
+package HW5.Program;
 
 import java.util.Scanner;
 
 import HW5.controller.Controller;
 import HW5.model.data.User;
 import HW5.model.service.UserService;
+import HW5.view.UI;
 
 public class App {
     public static void buttonClick() {
