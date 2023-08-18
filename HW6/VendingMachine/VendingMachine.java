@@ -1,9 +1,13 @@
-package VendingMachine;
+package HW6.VendingMachine;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/*У нас есть абстракный класс Product, от него наследует классы Beverage и Food. А от класса Beverage наследует HotBeverage.
+/если нам понадобиться торговый автомат с только горячими напитками, то для этого в данный программе есть класс HotBeverageVendingMachin, но 
+/мы могли бы сделать тоже самое просто типизировав простой торгоывый автомат(VendingMachine<HotBeverage>), и все бы работало.
+/* */
 public class VendingMachine<T extends Product> implements AddProduct<T>, Iterable<T> {
     List<T> listProducts = new ArrayList<T>();
 

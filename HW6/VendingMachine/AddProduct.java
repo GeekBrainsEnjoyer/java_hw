@@ -1,4 +1,4 @@
-package VendingMachine;
+package HW6.VendingMachine;
 
 public interface AddProduct<T extends Product> {
 

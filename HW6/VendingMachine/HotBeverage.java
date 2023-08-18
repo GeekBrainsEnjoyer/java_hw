@@ -1,4 +1,4 @@
-package VendingMachine;
+package HW6.VendingMachine;
 
 public class HotBeverage extends Beverage{
     private int temperature;
@@ -15,6 +15,14 @@ public class HotBeverage extends Beverage{
 
     public int getTemperature(HotBeverage product){
         return temperature;
+    }
+
+    public int getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(int temperature) {
+        this.temperature = temperature;
     }
 }
     

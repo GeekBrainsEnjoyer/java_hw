@@ -1,4 +1,4 @@
-package VendingMachine;
+package HW6.VendingMachine;
 
 public class Beverage extends Product {
     private double volume;

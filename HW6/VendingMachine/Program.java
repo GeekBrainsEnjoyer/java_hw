@@ -1,8 +1,12 @@
-package VendingMachine;
+package HW6.VendingMachine;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/*
+ * Принцип инверсии зависимостей сохраняется и подставив в момент объвления класса в VendingMachine вместо Product любого его наследника, программа
+корректно это обработает.
+ */
 public class Program {
     public static void main(String[] args) {
 
@@ -14,7 +18,7 @@ public class Program {
         HotBeverage hb2 = new HotBeverage("tea", 1, 0.3, 10, 45);
 
         VendingMachine<Product> vendingMachine = new VendingMachine<>(new ArrayList<>(Arrays.asList(b1)));
-        HotBeverageVendingMachine<HotBeverage> hotMachine = new HotBeverageVendingMachine<>(
+        VendingMachine<HotBeverage> hotMachine = new HotBeverageVendingMachine<>(
                 new ArrayList<>(Arrays.asList(hb1)));
 
         // vendingMachine.addProduct(b1);

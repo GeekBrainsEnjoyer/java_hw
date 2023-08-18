@@ -1,4 +1,4 @@
-package Market;
+package HW6.Market;
 
 import java.util.List;
 
@@ -46,6 +46,10 @@ public class Human extends Actor {
     @Override
     public boolean isTakeOrder() {
         return true;
+    }
+
+    public void setHumanOrder(List<Product> humanOrder) {
+        HumanOrder = humanOrder;
     }
 
 }

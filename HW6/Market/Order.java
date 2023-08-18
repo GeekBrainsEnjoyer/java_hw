@@ -1,10 +1,10 @@
-package Market;
+package HW6.Market;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Order<T> implements Iterable<Product> {
+public class Order<T extends Product> implements Iterable<Product> {
     private Human client;
     private List<Product> orderList;
     private Integer totalCost;
@@ -27,9 +27,7 @@ public class Order<T> implements Iterable<Product> {
         this.totalCost = 0;
     }
 
-    public void setOrderList(List<Product> orderList) {
-        this.orderList = orderList;
-    }
+    
 
     public void setTotalCost(int totalCost) {
         this.totalCost = totalCost;
@@ -40,7 +38,9 @@ public class Order<T> implements Iterable<Product> {
     }
 
     /*
-     * формируется новый список продуктов который соответсвует состоянию магазина
+     * Тут проблема в том, что в классе есть методы, создающие его. Это нарушает принцип единой ответственности.
+     * Оптимально, как мне кажется, надо этот метод добавить в отдельный интерфейс, и уже этот интерфейс имплементировать
+     * к другим классам, которые эта функция потребуется. 
      */
     public void validateOrder(List<Product> marketList) {
         List<Product> validateOrderList = new ArrayList<>();
@@ -57,9 +57,9 @@ public class Order<T> implements Iterable<Product> {
     }
 
     /*
-     * списов оформляется в обьект класса ордер
+     * С этим методом как и с предыдущим. Возможно их надо добавить в ращные интефейсы, а может и в один.
      */
-    public Order createOrder(List<Product> marketList) {
+    public Order<T> createOrder(List<T> marketList) {
         totalCost = 0;
         for (Product product1 : this.orderList) {
             for (Product product2 : marketList) {
@@ -67,7 +67,7 @@ public class Order<T> implements Iterable<Product> {
                     totalCost += product2.getPrice() * product1.getQuantity();
             }
         }
-        return new Order(this.client, this.orderList, totalCost);
+        return new Order<>(this.client, this.orderList, totalCost);
     }
 
     /*
@@ -91,5 +91,25 @@ public class Order<T> implements Iterable<Product> {
                 return orderList.get(counter++);
             }
         };
+    }
+
+    public Human getClient() {
+        return client;
+    }
+
+    public void setClient(Human client) {
+        this.client = client;
+    }
+
+    public List<Product> getOrderList() {
+        return orderList;
+    }
+
+    public void setOrderList(List<Product> orderList) {
+        this.orderList = orderList;
+    }
+
+    public void setTotalCost(Integer totalCost) {
+        this.totalCost = totalCost;
     }
 }

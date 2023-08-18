@@ -1,4 +1,4 @@
-package Market;
+package HW6.Market;
 
 public abstract class Actor implements ActorBehavoir{
     

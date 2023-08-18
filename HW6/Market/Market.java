@@ -1,9 +1,11 @@
-package Market;
+package HW6.Market;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
+/*
+ * интерфесы имплементируются, но не реализуются, что нарушает принцип разделения интерфесов.
+ */
 public class Market implements MarketBehavior, QueueBehavoir, Iterable<Product> {
     private List<Product> listProducts = new ArrayList<>();
 
@@ -75,6 +77,14 @@ public class Market implements MarketBehavior, QueueBehavoir, Iterable<Product> 
                 return listProducts.get(counter++);
             }
         };
+    }
+
+    public List<Product> getListProducts() {
+        return listProducts;
+    }
+
+    public void setListProducts(List<Product> listProducts) {
+        this.listProducts = listProducts;
     }
 
 }

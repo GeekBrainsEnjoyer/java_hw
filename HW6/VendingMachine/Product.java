@@ -1,4 +1,4 @@
-package VendingMachine;
+package HW6.VendingMachine;
 
 public abstract class Product {
     private String name;
